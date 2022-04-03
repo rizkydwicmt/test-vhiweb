@@ -23,6 +23,14 @@ class CreatePhotoTable extends Migration
             $table->string('foto')->nullable();
             $table->timestamps();
         });
+
+        Schema::table('photo', function (Blueprint $table) {
+            $table
+                ->foreign('id_users')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
+        });
     }
 
     /**

@@ -27,6 +27,19 @@ class CreateLikePhotoTable extends Migration
                 ->nullable();
             $table->timestamps();
         });
+
+        Schema::table('like_photo', function (Blueprint $table) {
+            $table
+                ->foreign('id_photo')
+                ->references('id')
+                ->on('photo')
+                ->onDelete('cascade');
+            $table
+                ->foreign('id_users')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
+        });
     }
 
     /**
