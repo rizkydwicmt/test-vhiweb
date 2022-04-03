@@ -13,8 +13,8 @@ class Photo extends Model
     protected $primaryKey = 'id';
     protected $guarded = [];
 
-    public function photos()
+    public function likePhotos()
     {
-        return $this->hasMany('App\Models\LikePhoto');
+        return $this->hasMany('App\Models\LikePhoto', 'id_photo');
     }
 }

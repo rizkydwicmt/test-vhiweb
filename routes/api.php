@@ -16,19 +16,35 @@ use Illuminate\Support\Facades\Route;
 
 /* User */
 Route::group(['prefix' => '/user'], function () {
-    Route::post('register', 'Api\AuthController@register');
+    Route::post('register', 'Api\AuthController@register')->name('register');
 });
 
-Route::group([
+Route::group(
+    [
+        'middleware' => 'api',
+        'prefix' => 'user',
+    ],
+    function ($router) {
+        Route::post('login', 'Api\AuthController@login')->name('login');
+        Route::get('/', 'Api\AuthController@me');
+        Route::post('logout', 'Api\AuthController@logout');
+        Route::post('refresh', 'Api\AuthController@refresh');
+    },
+);
 
-    'middleware' => 'api',
-    'prefix' => 'user'
-
-], function ($router) {
-
-    Route::post('/', 'AuthController@me');
-    Route::post('login', 'AuthController@login');
-    Route::post('logout', 'AuthController@logout');
-    Route::post('refresh', 'AuthController@refresh');
-
+/* Photo */
+Route::group(['prefix' => '/photo'], function () {
+    Route::get('/', 'Api\PhotoController@getPhoto');
 });
+
+Route::group(
+    [
+        'middleware' => 'api',
+        'prefix' => 'photo',
+    ],
+    function ($router) {
+        Route::post('create', 'Api\PhotoController@createPhoto');
+        Route::post('logout', 'Api\PhotoController@logout');
+        Route::post('refresh', 'Api\PhotoController@refresh');
+    },
+);

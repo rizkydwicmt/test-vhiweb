@@ -19,7 +19,7 @@ class User extends Authenticatable implements JWTSubject
 
     public function photos()
     {
-        return $this->hasMany('App\Models\Photo');
+        return $this->hasMany('App\Models\Photo', 'id_users');
     }
 
     public function getJWTIdentifier()
