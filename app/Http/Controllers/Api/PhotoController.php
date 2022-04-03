@@ -61,6 +61,15 @@ class PhotoController extends Controller
         return $this->success_cud('Photo berhasil diupdate', $result);
     }
 
+    public function deletePhoto($id)
+    {
+        $photo = Photo::findOrFail($id);
+        $this->deleteFile($photo->foto, DIR_UPLOAD);
+        $photo->delete();
+
+        return $this->success_cud('Photo berhasil didelete', []);
+    }
+
     public function getPhoto(Request $request)
     {
         $result = Photo::get();

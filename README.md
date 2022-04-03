@@ -12,7 +12,7 @@
 - [x] Create Photo
 - [x] Photo Detail
 - [x] Update Photo
-- [ ] Delete Photo
+- [x] Delete Photo
 - [ ] Like Photo
 - [ ] Unlike Photo
 

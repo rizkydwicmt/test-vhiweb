@@ -235,4 +235,14 @@ class Controller extends BaseController
 
         return $nama_file;
     }
+
+    public function deleteFile($oldfile, $path)
+    {
+        $photo = $path.$oldfile;
+        if (File::exists($photo)) {
+            File::delete($photo);
+        }
+
+        return true;
+    }
 }

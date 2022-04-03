@@ -42,6 +42,7 @@ Route::group(
     function ($router) {
         Route::post('/', 'Api\PhotoController@createPhoto');
         Route::put('/{id}', 'Api\PhotoController@updatePhoto');
+        Route::delete('/{id}', 'Api\PhotoController@deletePhoto');
     },
 );
 
