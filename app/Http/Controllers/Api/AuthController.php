@@ -128,6 +128,6 @@ class AuthController extends Controller
             ->factory()
             ->getTTL();
 
-        return new Cookie(env('AUTH_COOKIE_NAME'), $token, strtotime("+{$min} minutes"), null, null, true, true, false, 'Strict');
+        return new Cookie(AUTH_COOKIE_NAME, $token, strtotime("+{$min} minutes"), null, null, true, true, false, 'Strict');
     }
 }

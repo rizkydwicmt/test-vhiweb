@@ -11,3 +11,4 @@ define('DATA_TIDAK_DITEMUKAN', 404);
 /* ENV */
 define('FILE_SIZE', 10); //MB
 define('DIR_UPLOAD', 'images/photo/');
+define('AUTH_COOKIE_NAME', 'jwt');

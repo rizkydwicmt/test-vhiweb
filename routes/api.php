@@ -15,10 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 /* User */
-Route::group(['prefix' => '/user'], function () {
-    Route::post('register', 'Api\AuthController@register')->name('register');
-});
-
 Route::group(
     [
         'middleware' => 'api',
@@ -32,19 +28,25 @@ Route::group(
     },
 );
 
-/* Photo */
-Route::group(['prefix' => '/photo'], function () {
-    Route::get('/', 'Api\PhotoController@getPhoto');
+Route::group(['prefix' => '/user'], function () {
+    Route::post('register', 'Api\AuthController@register')->name('register');
 });
 
+
+/* Photo */
 Route::group(
     [
         'middleware' => 'api',
-        'prefix' => 'photo',
+        'prefix' => 'photos',
     ],
     function ($router) {
-        Route::post('create', 'Api\PhotoController@createPhoto');
-        Route::post('logout', 'Api\PhotoController@logout');
-        Route::post('refresh', 'Api\PhotoController@refresh');
+        Route::post('/', 'Api\PhotoController@createPhoto');
+        Route::put('/{id}', 'Api\PhotoController@updatePhoto');
     },
 );
+
+Route::group(['prefix' => '/photos'], function () {
+    Route::get('/', 'Api\PhotoController@getPhoto');
+    Route::get('/{id}', 'Api\PhotoController@getPhotoDetail');
+});
+

@@ -8,10 +8,10 @@
 - php artisan serve
 
 ## TASK LIST
-- [ ] Get Photos
-- [ ] Create Photo
-- [ ] Photo Detail
-- [ ] Update Photo
+- [x] Get Photos
+- [x] Create Photo
+- [x] Photo Detail
+- [x] Update Photo
 - [ ] Delete Photo
 - [ ] Like Photo
 - [ ] Unlike Photo

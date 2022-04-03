@@ -21,6 +21,8 @@ class CreatePhotoTable extends Migration
                 ->index()
                 ->nullable();
             $table->string('foto')->nullable();
+            $table->string('caption')->nullable();
+            $table->string('tags')->nullable();
             $table->timestamps();
         });
 
