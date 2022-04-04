@@ -11,6 +11,8 @@
 
 - PHP, Laravel, Eloquent, Migration, JWT, MySql
 - Example in postman at file vhiweb.postman_collection.json
+- Link online demo [http://aisoft.id/vhiweb-test/](http://aisoft.id/vhiweb-test/)
+- Link repo [github](https://github.com/rizkydwicmt/test-vhiweb)
 
 ## TASK LIST
 - [x] Get Photos
