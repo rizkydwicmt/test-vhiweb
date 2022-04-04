@@ -16,13 +16,13 @@
 - Link repo [github](https://github.com/rizkydwicmt/test-vhiweb)
 
 ## TASK LIST
-- [x] Get Photos
-- [x] Create Photo
-- [x] Photo Detail
-- [x] Update Photo
-- [x] Delete Photo
-- [x] Like Photo
-- [x] Unlike Photo
+- [x] Get Photos - *[ GET ]* http://aisoft.id/vhiweb-test/api/photos/ **[ No Auth Barrier ]**
+- [x] Create Photo - *[ POST ]* http://aisoft.id/vhiweb-test/api/photos/ **[ With Auth Barrier ]**
+- [x] Photo Detail - *[ GET ]* http://aisoft.id/vhiweb-test/api/photos/{id} **[ No Auth Barrier ]**
+- [x] Update Photo - *[ PUT ]* http://aisoft.id/vhiweb-test/api/photos/{id} **[ With Auth Barrier ]**
+- [x] Delete Photo - *[ DELETE ]* http://aisoft.id/vhiweb-test/api/photos/{id} **[ With Auth Barrier ]**
+- [x] Like Photo - *[ POST ]* http://aisoft.id/vhiweb-test/api/photos/{id}/like **[ With Auth Barrier ]**
+- [x] Unlike Photo - *[ POST ]* http://aisoft.id/vhiweb-test/api/photos/{id}/unlike **[ With Auth Barrier ]**
 
 
 ## Example requests
