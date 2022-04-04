@@ -82,7 +82,7 @@ class PhotoController extends Controller
     public function getPhotoDetail($id)
     {
         $result = Photo::select('photo.*', 'photo.id_users')
-            ->selectRaw('count(like_photo.id) as like')
+            ->selectRaw('count(like_photo.id) as liked')
             ->leftJoin('like_photo', 'photo.id', 'like_photo.id_photo')
             ->where('photo.id', $id)
             ->groupBy('photo.id')

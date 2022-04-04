@@ -14,7 +14,7 @@ class LikePhotoController extends Controller
     {
         $this->middleware('auth:api');
     }
-    
+
     public function likePhoto($id)
     {
         $data = [
@@ -50,6 +50,6 @@ class LikePhotoController extends Controller
 
         $result = LikePhoto::where($data)->delete();
 
-        return $this->success_cud('Like Photo berhasil ditambah', []);
+        return $this->success_cud('Unlike Photo berhasil ditambah', []);
     }
 }
