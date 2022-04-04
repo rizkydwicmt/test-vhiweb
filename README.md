@@ -1,6 +1,7 @@
 ## TUTORIAL INSTALASI
 
 - composer install
+- composer dump-autoload
 - php artisan optimize
 - php artisan migrate:refresh
 
