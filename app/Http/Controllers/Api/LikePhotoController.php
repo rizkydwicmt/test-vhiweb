@@ -9,6 +9,12 @@ use App\Models\Photo;
 
 class LikePhotoController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
+    
     public function likePhoto($id)
     {
         $data = [

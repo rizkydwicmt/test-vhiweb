@@ -52,7 +52,7 @@ Route::group(
 );
 
 Route::group(['prefix' => '/photos'], function () {
-    Route::get('/', 'Api\PhotoController@getPhoto');
-    Route::get('/{id}', 'Api\PhotoController@getPhotoDetail');
+    Route::get('/', 'Api\PhotoController@getPhoto')->name('getPhoto');
+    Route::get('/{id}', 'Api\PhotoController@getPhotoDetail')->name('getPhotoDetail');
 });
 

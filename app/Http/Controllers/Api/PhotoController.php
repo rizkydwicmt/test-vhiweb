@@ -11,7 +11,7 @@ class PhotoController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:api');
+        $this->middleware('auth:api', ['except' => ['getPhoto', 'getPhotoDetail']]);
     }
 
     public function createPhoto(Request $request)
@@ -55,15 +55,18 @@ class PhotoController extends Controller
             'tags' => $request->tags,
         ];
 
-        $id = Photo::findOrFail($id)->update($data);
-        $result = Photo::find($id);
+        $update = Photo::find($id);
+        if($update == null) return $this->notFound('Data tidak ditemukan');
+        $update->update($data);
+        $result = Photo::find($update->id);
 
         return $this->success_cud('Photo berhasil diupdate', $result);
     }
 
     public function deletePhoto($id)
     {
-        $photo = Photo::findOrFail($id);
+        $photo = Photo::find($id);
+        if($photo == null) return $this->notFound('Data tidak ditemukan');
         $this->deleteFile($photo->foto, DIR_UPLOAD);
         $photo->delete();
 
