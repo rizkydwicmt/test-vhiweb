@@ -43,6 +43,11 @@ Route::group(
         Route::post('/', 'Api\PhotoController@createPhoto');
         Route::put('/{id}', 'Api\PhotoController@updatePhoto');
         Route::delete('/{id}', 'Api\PhotoController@deletePhoto');
+
+        /* Like Photo */
+
+        Route::post('/{id}/like', 'Api\LikePhotoController@likePhoto');
+        Route::post('/{id}/unlike', 'Api\LikePhotoController@unlikePhoto');
     },
 );
 

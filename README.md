@@ -13,8 +13,8 @@
 - [x] Photo Detail
 - [x] Update Photo
 - [x] Delete Photo
-- [ ] Like Photo
-- [ ] Unlike Photo
+- [x] Like Photo
+- [x] Unlike Photo
 
 
 ## Example requests
